@@ -6,6 +6,7 @@ import me.prathamesh.components.Tree;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.concurrent.TimeUnit;
 
 public class Main extends JFrame {
 
@@ -22,8 +23,28 @@ public class Main extends JFrame {
         g.setColor(new Color(129, 180, 245));
         g.fillRect(0, 0, 800, 600);
 
+        try {
+            TimeUnit.MILLISECONDS.sleep(400);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         new Sky(g);
+
+        try {
+            TimeUnit.MILLISECONDS.sleep(400);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
         new Ground(g, 508);
+
+        try {
+            TimeUnit.MILLISECONDS.sleep(300);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         Tree tree = new Tree(g);
         try {
